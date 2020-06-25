@@ -1,6 +1,8 @@
 from random import randint
 #6 vies
 vies=6
+penduAscii=["+———————+\nI       O\nI     / I \ \nI      / \ \nI\n=========","+———————+\nI       O\nI     / I \ \nI      /   \nI\n=========","+———————+\nI       O\nI     / I \ \nI          \nI\n=========","+———————+\nI       O\nI     / I   \nI          \nI\n=========","+———————+\nI       O\nI       I   \nI          \nI\n=========","+———————+\nI       O\nI           \nI          \nI\n=========","+———————+\nI        \nI           \nI          \nI\n========="]
+
 def motATrouver():
 
     fichierMots=open("dico.txt","r")
@@ -19,13 +21,8 @@ def affichageMot(motADeviner):
     #converti le mot en une suite de point de la même longeur (1 pts = 1 lettre)
     for i in range(len(motADeviner)):
         affichageMotJoueur+="."
-    print(affichageMotJoueur)
+    print("Le mot est:",affichageMotJoueur)
     return(affichageMotJoueur)
-
-
-
-
-
 
 motADeviner=motATrouver()
 affichageJoueur=affichageMot(motADeviner)
@@ -34,36 +31,40 @@ while vies > 0:
     changeLettre=[]
     temp1=""
     perteVies=0
-    lettre=input("à quelle lettre pensez-vous ?").lower()
-    
-    print("première lettre mot =",motADeviner[0])
-    print("motADeviner=",motADeviner)
-    print("longeur mot=",len(motADeviner))
-    print("longeur affichage=",len(affichageJoueur))
+    choixLettre=True
+
+    while choixLettre:
+
+        lettre=input("à quelle lettre pensez-vous ?").lower()
+
+        if lettre in affichageJoueur:
+            print("Vous avez déja trouvé cette lettre !")
+        else:
+            choixLettre=False
 
     for i in range(len(motADeviner)):
-        print("i=",i)
 
         if lettre==motADeviner[i]:
-            print("lettre juste",lettre)
             changeLettre.append(lettre)
 
         else:
-            print("affichage joueur=",affichageJoueur[i])
             changeLettre.append(affichageJoueur[i])
             perteVies+=1
 
-    print("pertieVies=",perteVies)
     if perteVies==len(motADeviner):
         
         print("Vous perdez une vie !")
         vies-=1
-        print("il vous en reste {0}".format(vies))
-        
-            
-
-    print("changelettre=",changeLettre)
+        print("{0}".format(penduAscii[vies]))
     
     affichageJoueur=temp1.join(changeLettre)
-    print("temp1=",temp1)
-    print("affichagejoueur",affichageJoueur)
+    print("Le mot est :",affichageJoueur)
+
+    if motADeviner==affichageJoueur:
+        print("Vous avez gagné !")
+        break
+
+    print("------------------------\n")
+
+if vies==0:
+    print("Le mot était: {0} !".format(motADeviner))
