@@ -3,7 +3,7 @@ from random import randint
 vies=6
 def motATrouver():
 
-    fichierMots=open("/Users/hugo/Desktop/dico.txt","r")
+    fichierMots=open("dico.txt","r")
     mots=fichierMots.readlines()
     fichierMots.close
     n=len(mots)
@@ -34,7 +34,7 @@ while vies > 0:
     changeLettre=[]
     temp1=""
     perteVies=0
-    lettre=input("à quelle lettre pensez-vous ?")
+    lettre=input("à quelle lettre pensez-vous ?").lower()
     
     print("première lettre mot =",motADeviner[0])
     print("motADeviner=",motADeviner)
