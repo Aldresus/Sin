@@ -8,11 +8,12 @@ root.title('JEU DE LA ROULETTE')
 nom = tk.LabelFrame(text="JEU DE LA ROULETTE")
 frameCagnotte = tk.LabelFrame(text="CAGNOTTE").pack(side="bottom")
 nom.pack(fill="both", expand="yes")
+messages = tk.StringVar()
 
 cagnotte=1000
 resultats=0
 
-'''["",,"Vous avez gagner {0}$".format(resultats),"Vous devez entrer une mise valide !",]'''
+
 valeurMSG=0
 menuDeroulant=[i for i in range (1,37)]
 
@@ -24,7 +25,7 @@ messagesGain = tk.StringVar()
 variablePariNombre = tk.IntVar()
 variableNombre = tk.IntVar()
 textvariable = tk.StringVar()
-messages = tk.StringVar()
+
 argent = tk.StringVar()
 argent.set("Vous avez{0} $".format(cagnotte))
 jeu = True
