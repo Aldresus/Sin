@@ -9,6 +9,7 @@ nom = tk.LabelFrame(text="JEU DE LA ROULETTE")
 frameCagnotte = tk.LabelFrame(text="CAGNOTTE").pack(side="bottom")
 nom.pack(fill="both", expand="yes")
 messages = tk.StringVar()
+messages.set("")
 
 cagnotte=1000
 resultats=0
