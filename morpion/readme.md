@@ -1,3 +1,3 @@
-# Tic Tac Toe / Morpion
+# Tic Tac Toe 
 
-Simple programme pour jouer au morpion contre un ordinateur !
+Simple program to play tictactoe against the computer!
