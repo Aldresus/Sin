@@ -1,3 +1,3 @@
-# Jeu du pendu
+# Hangman game
 
-Simple programme pour **jouer au pendu** avec un dictionnaire de **+800 mots**.
+Simple program to play **hangman game** with more than **800 french words**.
