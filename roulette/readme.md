@@ -1,3 +1,3 @@
 # Roulette
 
-Simple programme **simulant** le **jeu de la roulette**.
+Simple program simulating the **Roulette game**.
